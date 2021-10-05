@@ -12,6 +12,7 @@ class MoviesController < ApplicationController
   
   def index
     #@movies = Movie.all #first version
+    params.permit!
     sort = params[:sort] || session[:sort]
     case sort
     when 'title'
